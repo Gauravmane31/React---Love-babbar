@@ -19,25 +19,25 @@
 //   }
 //   return (
 //---------------------------------------------------------------------------------------------
-    //1 - Use of Use State.
-    // <div className='flex justify-center'>
-    //   <Usestateuse/>
-    // </div>
+//1 - Use of Use State.
+// <div className='flex justify-center'>
+//   <Usestateuse/>
+// </div>
 //---------------------------------------------------------------------------------------------
-    //2 - create state in parent, change in parent, manage in parent and just pass it to child so that they can manipulate and as the state is in parent it will get reflected in all chlid if they are also accessing it.
-    // <div>
-    //   <UsestateChild name={string} function={Updatestring}/>
-    //   <UsestateChild name={string} function={Updatestring}/>
-    // </div>
+//2 - create state in parent, change in parent, manage in parent and just pass it to child so that they can manipulate and as the state is in parent it will get reflected in all chlid if they are also accessing it.
+// <div>
+//   <UsestateChild name={string} function={Updatestring}/>
+//   <UsestateChild name={string} function={Updatestring}/>
+// </div>
 //---------------------------------------------------------------------------------------------
-    //3 - childrens in React( used when we dont know erlier about content and which data will be there.) and it contains example of function passing to child
-    // <div>
-    //   <Childprops children="Hey I will get over-written by inside content." incrementer={increment} text="click me" countnew={count}>
-    //     <del>These are children 1</del>
-    //     <em>These are children 2</em>
-    //     <p>These are children 3</p>
-    //   </Childprops>
-    // </div>
+//3 - childrens in React( used when we dont know erlier about content and which data will be there.) and it contains example of function passing to child
+// <div>
+//   <Childprops children="Hey I will get over-written by inside content." incrementer={increment} text="click me" countnew={count}>
+//     <del>These are children 1</del>
+//     <em>These are children 2</em>
+//     <p>These are children 3</p>
+//   </Childprops>
+// </div>
 //   )
 // }
 
@@ -97,31 +97,39 @@
 //======================================================================================================================
 import { useState } from "react";
 import Conditional from "./components/4_ConditionalRendering";
+import Event from "./components/5_EventHandlingInReact";
 
 function App() {
-    const [activeSection, setActiveSection] = useState(1);
+  const [activeSection, setActiveSection] = useState(1);
 
-    return (
-        <div>
-            <Conditional
-                id={1}
-                activeSection={activeSection}
-                setActiveSection={setActiveSection}
-                DefaultContent="Section 1"
-            >
-                <p>This is content for Section 1.</p>
-            </Conditional>
+  return (
+    //---------------------------------------------------------------------------------------------
+    //4 - Conditional Statement in jsx(react)
+    // <div>
+    //     <Conditional
+    //         id={1}
+    //         activeSection={activeSection}
+    //         setActiveSection={setActiveSection}
+    //         DefaultContent="Section 1"
+    //     >
+    //         <p>This is content for Section 1.</p>
+    //     </Conditional>
 
-            <Conditional
-                id={2}
-                activeSection={activeSection}
-                setActiveSection={setActiveSection}
-                DefaultContent="Section 2"
-            >
-                <p>This is content for Section 2.</p>
-            </Conditional>
-        </div>
-    );
+    //     <Conditional
+    //         id={2}
+    //         activeSection={activeSection}
+    //         setActiveSection={setActiveSection}
+    //         DefaultContent="Section 2"
+    //     >
+    //         <p>This is content for Section 2.</p>
+    //     </Conditional>
+    // </div>
+    //---------------------------------------------------------------------------------------------
+    //5
+    <div>
+      <Event />
+    </div>
+  );
 }
 
 export default App;
