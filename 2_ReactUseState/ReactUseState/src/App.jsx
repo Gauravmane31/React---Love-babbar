@@ -98,13 +98,14 @@
 import { useState } from "react";
 import Conditional from "./components/4_ConditionalRendering";
 import Event from "./components/5_EventHandlingInReact";
+import UseEffect from "./components/6_useEffect";
 
 function App() {
   const [activeSection, setActiveSection] = useState(1);
-
+  const [count,setcount] = useState(0);
   return (
     //---------------------------------------------------------------------------------------------
-    //4 - Conditional Statement in jsx(react)
+    //4 -> Conditional Statement in jsx(react)
     // <div>
     //     <Conditional
     //         id={1}
@@ -125,9 +126,18 @@ function App() {
     //     </Conditional>
     // </div>
     //---------------------------------------------------------------------------------------------
-    //5
+    //5 -> shows event handling
+    //---------------------------------------------------------------------------------------------
+    // <div>
+    //   <Event />
+    // </div>
+    //---------------------------------------------------------------------------------------------
+    //6 -> variation of useEffect
+    //---------------------------------------------------------------------------------------------
     <div>
-      <Event />
+      <UseEffect count={count}/>
+      <button onClick={()=>{setcount(count+1)}}>Click me</button>
+      <p>{count}</p>
     </div>
   );
 }
